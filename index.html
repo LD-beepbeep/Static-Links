@@ -4,92 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StaticLink Projects</title>
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <style>
-    /* tiny enhancement for dropdown */
-    .hidden {display:none;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #111;
+    }
+    .accent {
+      color: #3A86FF;
+    }
+    .blob {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at 30% 30%, rgba(58,134,255,0.2), transparent 70%);
+      top: -100px;
+      left: -100px;
+      animation: float 10s ease-in-out infinite;
+      z-index: 0;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0,0);}
+      50% { transform: translate(30px,20px);}
+    }
+    /* Dropdown override */
+    .hidden { display:none; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <!-- Header -->
-  <header class="bg-gray-900 text-white">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-2xl font-bold">StaticLink</h1>
+<div class="blob"></div>
 
-      <!-- Dropdown -->
-      <div class="relative">
-        <button id="switchBtn" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md">
-          Switch Project ▼
-        </button>
-        <div id="menu" class="absolute right-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg hidden">
-          <a href="https://ld-beepbeep.github.io/static-link/" class="block px-4 py-2 hover:bg-gray-100">Promo Site</a>
-          <a href="https://ld-beepbeep.github.io/Static-Link-Web/" class="block px-4 py-2 hover:bg-gray-100">Web App</a>
-          <a href="https://ld-beepbeep.github.io/static-link/" class="block px-4 py-2 hover:bg-gray-100">Android APK</a>
-        </div>
-      </div>
+<!-- Header with dropdown -->
+<header class="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-md fixed w-full z-10 shadow-sm">
+  <h1 class="text-2xl font-extrabold">Static<span class="accent">Link</span></h1>
+  <div class="relative">
+    <button id="switchBtn" class="px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 transition">
+      Switch Project ▼
+    </button>
+    <div id="menu" class="absolute right-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg hidden">
+      <a href="https://ld-beepbeep.github.io/static-link/" class="block px-4 py-2 hover:bg-gray-100">Promo Site</a>
+      <a href="https://ld-beepbeep.github.io/Static-Link-Web/" class="block px-4 py-2 hover:bg-gray-100">Web App</a>
+      <a href="https://github.com/LD-beepbeep/Static-Link-APK/releases" class="block px-4 py-2 hover:bg-gray-100">Android APK</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-12">
-    <h2 class="text-3xl font-semibold mb-4">All StaticLink Projects</h2>
-    <p class="text-gray-600">Jump between the promo site, the web app, and the Android APK easily.</p>
-  </section>
+<!-- Hero -->
+<section class="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-24">
+  <h1 class="text-5xl md:text-7xl font-extrabold" data-aos="fade-up">
+    Static<span class="accent">Link</span> Projects
+  </h1>
+  <p class="mt-4 text-gray-500 font-medium" data-aos="fade-up" data-aos-delay="75">
+    All your StaticLink apps in one place.
+  </p>
+  <p class="mt-6 max-w-xl text-lg md:text-xl text-gray-600" data-aos="fade-up" data-aos-delay="150">
+    Quickly jump to the promo site, web app, or download the Android APK.
+  </p>
+</section>
 
-  <!-- Cards -->
-  <section class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-3 pb-16">
-    <!-- Promo Card -->
-    <div class="bg-white rounded-xl shadow p-6 flex flex-col">
-      <h3 class="text-xl font-bold mb-2">Promo Site</h3>
-      <p class="flex-grow text-gray-600">The landing page and marketing site for StaticLink.</p>
-      <div class="mt-4 flex gap-2">
-        <a href="https://ld-beepbeep.github.io/static-link/" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500">Open</a>
-        <a href="https://github.com/LD-beepbeep/static-link/tree/main" class="bg-gray-200 px-4 py-2 rounded-md hover:bg-gray-300">GitHub</a>
-      </div>
+<!-- Cards -->
+<section class="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-3 pb-16">
+  <!-- Promo Card -->
+  <div class="bg-white rounded-2xl shadow p-6 flex flex-col" data-aos="fade-up">
+    <h3 class="text-xl font-bold mb-2">Promo Site</h3>
+    <p class="flex-grow text-gray-600">Landing page & marketing site for StaticLink.</p>
+    <div class="mt-4 flex gap-2">
+      <a href="https://ld-beepbeep.github.io/static-link/" class="px-4 py-2 rounded-full font-semibold text-white bg-[#3A86FF] shadow hover:scale-105 transition">Open</a>
+      <a href="https://github.com/LD-beepbeep/static-link/tree/main" class="px-4 py-2 rounded-full font-semibold border border-gray-300 hover:bg-gray-100 transition">GitHub</a>
     </div>
-
-    <!-- Web App Card -->
-    <div class="bg-white rounded-xl shadow p-6 flex flex-col">
-      <h3 class="text-xl font-bold mb-2">Web App</h3>
-      <p class="flex-grow text-gray-600">Use StaticLink directly in your browser (offline-first).</p>
-      <div class="mt-4 flex gap-2">
-        <a href="https://ld-beepbeep.github.io/Static-Link-Web/" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500">Open</a>
-        <a href="https://github.com/LD-beepbeep/Static-Link-Web" class="bg-gray-200 px-4 py-2 rounded-md hover:bg-gray-300">GitHub</a>
-      </div>
+  </div>
+  <!-- Web App Card -->
+  <div class="bg-white rounded-2xl shadow p-6 flex flex-col" data-aos="fade-up" data-aos-delay="150">
+    <h3 class="text-xl font-bold mb-2">Web App</h3>
+    <p class="flex-grow text-gray-600">Use StaticLink directly in your browser (offline-first).</p>
+    <div class="mt-4 flex gap-2">
+      <a href="https://ld-beepbeep.github.io/Static-Link-Web/" class="px-4 py-2 rounded-full font-semibold text-white bg-[#3A86FF] shadow hover:scale-105 transition">Open</a>
+      <a href="https://github.com/LD-beepbeep/Static-Link-Web" class="px-4 py-2 rounded-full font-semibold border border-gray-300 hover:bg-gray-100 transition">GitHub</a>
     </div>
-
-    <!-- Android APK Card -->
-    <div class="bg-white rounded-xl shadow p-6 flex flex-col">
-      <h3 class="text-xl font-bold mb-2">Android APK</h3>
-      <p class="flex-grow text-gray-600">Download the open-source Android app for offline sharing.</p>
-      <div class="mt-4 flex gap-2">
-        <a href="https://github.com/LD-beepbeep/Static-Link-APK/releases" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500">Download APK</a>
-        <a href="https://github.com/LD-beepbeep/Static-Link-APK" class="bg-gray-200 px-4 py-2 rounded-md hover:bg-gray-300">GitHub</a>
-      </div>
+  </div>
+  <!-- Android APK Card -->
+  <div class="bg-white rounded-2xl shadow p-6 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+    <h3 class="text-xl font-bold mb-2">Android APK</h3>
+    <p class="flex-grow text-gray-600">Download the open-source Android app for offline sharing.</p>
+    <div class="mt-4 flex gap-2">
+      <a href="https://github.com/LD-beepbeep/Static-Link-APK/releases" class="px-4 py-2 rounded-full font-semibold text-white bg-[#3A86FF] shadow hover:scale-105 transition">Download</a>
+      <a href="https://github.com/LD-beepbeep/Static-Link-APK" class="px-4 py-2 rounded-full font-semibold border border-gray-300 hover:bg-gray-100 transition">GitHub</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-4">
-    <p>© 2025 StaticLink · <a href="https://github.com/LD-beepbeep/Static-Links" class="underline">This site on GitHub</a></p>
-  </footer>
+<footer class="text-center text-gray-400 py-10">
+  © 2025 StaticLink — <a href="https://github.com/LD-beepbeep/Static-Links" class="underline">This site on GitHub</a>
+</footer>
 
-  <!-- JS for dropdown -->
-  <script>
-    const btn = document.getElementById('switchBtn');
-    const menu = document.getElementById('menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-    // Close menu on click elsewhere
-    document.addEventListener('click', (e) => {
-      if (!btn.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.add('hidden');
-      }
-    });
-  </script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+
+  const btn = document.getElementById('switchBtn');
+  const menu = document.getElementById('menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
+  });
+</script>
 
 </body>
 </html>
