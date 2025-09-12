@@ -3,12 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StaticLink Projects</title>
+  <title>StaticLink</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <style>
     body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #111;
+    }
+    .accent {
+      color: #3A86FF;
+    }
+    .blob {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at 30% 30%, rgba(58,134,255,0.2), transparent 70%);
+      top: -100px;
+      left: -100px;
+      animation: float 10s ease-in-out infinite;
+      z-index: 0;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0,0);}
+      50% { transform: translate(30px,20px);}
+    }
+     body {
       font-family: 'Inter', sans-serif;
       background: #f9fafb;
       color: #111;
@@ -38,42 +60,140 @@
 
 <div class="blob"></div>
 
-<!-- Header with dropdown -->
-<header class="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-md fixed w-full z-10 shadow-sm">
-  <h1 class="text-2xl font-extrabold">Static<span class="accent">Link</span></h1>
-  <div class="relative">
-    <button id="switchBtn" class="px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 transition">
-      Switch Project ▼
-    </button>
-    <div id="menu" class="absolute right-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg hidden">
-      <a href="https://ld-beepbeep.github.io/static-link/" class="block px-4 py-2 hover:bg-gray-100">Promo Site</a>
-      <a href="https://ld-beepbeep.github.io/Static-Link-Web/" class="block px-4 py-2 hover:bg-gray-100">Web App</a>
-      <a href="https://github.com/LD-beepbeep/Static-Link-APK/releases" class="block px-4 py-2 hover:bg-gray-100">Android APK</a>
-    </div>
-  </div>
-</header>
-
-<!-- Hero -->
-<section class="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-24">
+<section class="relative flex flex-col items-center justify-center text-center px-6 pt-24 pb-32">
   <h1 class="text-5xl md:text-7xl font-extrabold" data-aos="fade-up">
-    Static<span class="accent">Link</span> Projects
+    Static<span class="accent">Link</span>
   </h1>
   <p class="mt-4 text-gray-500 font-medium" data-aos="fade-up" data-aos-delay="75">
-    All your StaticLink apps in one place.
+    Offline Sharing • Private • Effortless
   </p>
   <p class="mt-6 max-w-xl text-lg md:text-xl text-gray-600" data-aos="fade-up" data-aos-delay="150">
-    Quickly jump to the promo site, web app, or download the Android APK.
+    Throw links, notes, pics — anything — into a bundle.<br/>
+    Share it instantly with a QR code.<br/>
+    Free forever. No logins. No ads.
   </p>
+  <div class="mt-8 flex gap-4" data-aos="fade-up" data-aos-delay="300">
+    <a href="#download" class="px-6 py-3 rounded-full font-semibold text-white bg-[#3A86FF] shadow-lg hover:scale-105 transition">
+      Download
+    </a>
+    <a href="https://ld-beepbeep.github.io/Static-Link-Web/" class="px-6 py-3 rounded-full font-semibold border border-gray-300 hover:bg-gray-100 transition">
+      Use On Web!
+    </a>
+  </div>
 </section>
 
+<section id="features" class="max-w-5xl mx-auto px-6 mb-24">
+  <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
+    Why Static<span class="accent">Link</span>?
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-white rounded-2xl shadow p-6" data-aos="fade-up">
+      <div class="text-4xl mb-4">📦</div>
+      <h3 class="text-xl font-semibold mb-2">Bundle Anything</h3>
+      <p class="text-gray-600">Links, notes, pics — all in one simple bundle.</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow p-6" data-aos="fade-up" data-aos-delay="150">
+      <div class="text-4xl mb-4">📶</div>
+      <h3 class="text-xl font-semibold mb-2">No tracking</h3>
+      <p class="text-gray-600">No cloud, no account, no ads, open-source. Just local.</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow p-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="text-4xl mb-4">⚡</div>
+      <h3 class="text-xl font-semibold mb-2">Instant QR</h3>
+      <p class="text-gray-600">Share a QR or file. Done in seconds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- New Section: Differentiator -->
+<section class="max-w-5xl mx-auto px-6 mb-24">
+  <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
+    Not Just Another Notes App
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600" data-aos="fade-up" data-aos-delay="150">
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h3 class="font-semibold text-xl mb-2">Why not just Keep/Docs?</h3>
+      <p>
+        Google Keep and Docs are cloud-first and require logins. 
+        StaticLink is designed for instant sharing: no account, no tracking, and no sync delay.
+      </p>
+    </div>
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h3 class="font-semibold text-xl mb-2">How we’re different</h3>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>No tracking — all local</li>
+        <li>Private — nothing leaves your device</li>
+        <li>Faster — QR or file hand-off in seconds</li>
+        <li>No bloat — just one purpose, done well</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="max-w-5xl mx-auto px-6 mb-24">
+  <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
+    Where Static<span class="accent">Link</span> Shines
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left text-gray-600" data-aos="fade-up" data-aos-delay="150">
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h3 class="font-semibold text-xl mb-2">Trips & Festivals</h3>
+      <p>Share your itinerary, maps, and playlists with friends without needing a group chat or an app login.</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h3 class="font-semibold text-xl mb-2">Quick Work Handoffs</h3>
+      <p>Pass links and files instantly at the office or in class — no cables, no setup, no accounts.</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h3 class="font-semibold text-xl mb-2">Teaching & Events</h3>
+      <p>Teachers, event hosts, or speakers can just throw everything into a QR — everyone gets it fast.</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h3 class="font-semibold text-xl mb-2">For Yourself</h3>
+      <p>Bundle links and notes as an offline pack you can open later without data or accounts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-6 mb-24 text-center">
+  <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">
+    How it works
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-600" data-aos="fade-up" data-aos-delay="150">
+    <div>
+      <div class="text-5xl mb-2">1</div>
+      <p>Pick links, notes, or files</p>
+    </div>
+    <div>
+      <div class="text-5xl mb-2">2</div>
+      <p>Generate a QR / file</p>
+    </div>
+    <div>
+      <div class="text-5xl mb-2">3</div>
+      <p>Your friend opens it — and that’s it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="text-center py-24 px-6">
+  <h2 class="text-4xl font-extrabold mb-6" data-aos="fade-up">
+    Ready to Try Static<span class="accent">Link</span>?
+  </h2>
+  <p class="text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="150">
+    Coming soon as an open-source APK and EXE!
+  </p>
+  <a href="https://ld-beepbeep.github.io/Static-Link-Web/" class="px-8 py-4 rounded-full text-white font-semibold bg-[#3A86FF] shadow-lg hover:scale-105 transition" data-aos="fade-up" data-aos-delay="300">
+    Try Now!
+  </a>
+</section>
 <!-- Cards -->
 <section class="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-3 pb-16">
   <!-- Promo Card -->
   <div class="bg-white rounded-2xl shadow p-6 flex flex-col" data-aos="fade-up">
-    <h3 class="text-xl font-bold mb-2">Promo Site</h3>
-    <p class="flex-grow text-gray-600">Landing page & marketing site for StaticLink.</p>
+    <h3 class="text-xl font-bold mb-2">Windows Program</h3>
+    <p class="flex-grow text-gray-600">The .exe file and the Github Repository for Static Link</p>
     <div class="mt-4 flex gap-2">
-      <a href="https://ld-beepbeep.github.io/static-link/" class="px-4 py-2 rounded-full font-semibold text-white bg-[#3A86FF] shadow hover:scale-105 transition">Open</a>
+      <a href="https://ld-beepbeep.github.io/static-link/" class="px-4 py-2 rounded-full font-semibold text-white bg-[#3A86FF] shadow hover:scale-105 transition">Download</a>
       <a href="https://github.com/LD-beepbeep/static-link/tree/main" class="px-4 py-2 rounded-full font-semibold border border-gray-300 hover:bg-gray-100 transition">GitHub</a>
     </div>
   </div>
@@ -98,23 +218,12 @@
 </section>
 
 <footer class="text-center text-gray-400 py-10">
-  © 2025 StaticLink — <a href="https://github.com/LD-beepbeep/Static-Links" class="underline">This site on GitHub</a>
+  © 2025 StaticLink — Open source. Good forever.
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
-
-  const btn = document.getElementById('switchBtn');
-  const menu = document.getElementById('menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-  document.addEventListener('click', (e) => {
-    if (!btn.contains(e.target) && !menu.contains(e.target)) {
-      menu.classList.add('hidden');
-    }
-  });
 </script>
 
 </body>
